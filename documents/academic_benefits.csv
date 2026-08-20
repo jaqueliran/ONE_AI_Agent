@@ -1,0 +1,16 @@
+benefit_id,benefit_name,category,value,frequency,eligibility,provider
+B001,Vale-refeição (VR),Alimentação,R$ 900,monthly,Teachers,Common Ground
+B002,Vale-alimentação (VA),Alimentação,R$ 500,monthly,Teachers,Common Ground
+B003,Vale-transporte (VT),Transporte,According to commute,monthly,Teachers,Common Ground
+B004,Vale-cultura,Cultura,R$ 50,monthly,Teachers,Common Ground
+B005,Plano de saúde,Saúde,100% company-paid,monthly,Teachers,Common Ground
+B006,Plano odontológico,Saúde,100% company-paid,monthly,Teachers,Common Ground
+B007,Seguro de vida,Segurança,Company-paid,monthly,Teachers,Common Ground
+B008,Wellhub (Gympass),Bem-estar,R$ 50 subsidy,monthly,Teachers,Common Ground
+B009,Convênio SESC,Cultura e lazer,No cost,ongoing,Teachers,Common Ground
+B010,Day-off de aniversário,Qualidade de vida,1 day,annual,Teachers,Common Ground
+B011,Bolsa para cursos da Common Ground,Educação,Up to 100%,as applicable,Teachers,Common Ground
+B012,Desconto em cursos para dependentes,Educação,50%,as applicable,Teachers,Common Ground
+B013,Formação continuada para professores,Desenvolvimento profissional,100%,as applicable,Teachers,Common Ground
+B014,Cursos de editoras parceiras,Desenvolvimento profissional,100% or as available,as applicable,Teachers,Common Ground
+B015,Descontos em instituições educacionais parceiras,Educação,Up to 30%,as applicable,Teachers,Common Ground
