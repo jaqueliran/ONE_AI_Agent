@@ -38,8 +38,18 @@ def create_embeddings(texts):
 
             except Exception as error:
                 if getattr(error, "code", None) == 429:
-                    print("Limite da API atingido. Aguardando 60 segundos...")
+                    error_message = str(error)
+
+                    if "PerDay" in error_message:
+                        print("Quota diária da API atingida.")
+                        raise
+
+                    print(
+                        "Limite temporário da API atingido. "
+                        "Aguardando 60 segundos..."
+                    )
                     time.sleep(60)
+
                 else:
                     raise
 
