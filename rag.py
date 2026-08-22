@@ -16,6 +16,7 @@ def retrieve_context(query, n_results=3):
     )
 
     contexts = []
+    sources = []
 
     for i, document in enumerate(result["documents"][0]):
         source = result["metadatas"][0][i]["source"]
@@ -25,11 +26,14 @@ def retrieve_context(query, n_results=3):
             f"Content: {document}"
         )
 
-    return "\n\n".join(contexts)
+        if source not in sources:
+            sources.append(source)
+
+    return "\n\n".join(contexts), sources
 
 
 def generate_response(query):
-    context = retrieve_context(query)
+    context, sources = retrieve_context(query)
 
     prompt = f"""
 You are an assistant for Common Ground, an English school.
@@ -57,13 +61,17 @@ Question:
         contents=prompt
     )
 
-    return response.text
+    return response.text, sources
 
 
 if __name__ == "__main__":
     question = "What is the minimum attendance requirement?"
 
-    response = generate_response(question)
+    response, sources = generate_response(question)
 
     print("\nResposta:")
     print(response)
+
+    print("\nFontes:")
+    for source in sources:
+        print(f"- {source}")
