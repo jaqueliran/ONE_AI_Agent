@@ -1,5 +1,7 @@
 import streamlit as st
 
+from rag import generate_response
+
 
 st.set_page_config(
     page_title="Common Ground AI Assistant",
@@ -24,9 +26,11 @@ question = st.text_input(
 
 if st.button("Ask"):
     if question.strip():
-        st.info(
-            "The RAG system will answer this question "
-            "once the vector database is available."
-        )
+        with st.spinner("Searching the documents..."):
+            response = generate_response(question)
+
+        st.subheader("Answer")
+        st.write(response)
+
     else:
         st.warning("Please enter a question.")
