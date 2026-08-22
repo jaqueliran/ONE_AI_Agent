@@ -27,10 +27,16 @@ question = st.text_input(
 if st.button("Ask"):
     if question.strip():
         with st.spinner("Searching the documents..."):
-            response = generate_response(question)
+            response, sources = generate_response(question)
 
         st.subheader("Answer")
         st.write(response)
+
+        if sources:
+            st.subheader("Sources")
+
+            for source in sources:
+                st.write(f"- {source}")
 
     else:
         st.warning("Please enter a question.")
